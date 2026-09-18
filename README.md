@@ -4,7 +4,7 @@ Reusable project templates optimized for **AI coding agents** — opinionated, l
 
 This repository is a collection of starter templates where the **agent instructions are the architecture**. Each template ships with a two-layer documentation system so agents get full context at minimal token cost, while humans get consistent conventions and quality gates out of the box.
 
-> Copy a folder → fill in Project Context → start coding. No setup wizard, no generator CLI.
+> Copy a folder → fill in Project Context → start coding. The LaTeX template also includes a guided setup flow for choosing one document type.
 
 ---
 
@@ -14,8 +14,9 @@ This repository is a collection of starter templates where the **agent instructi
 |----------|-------|-------------|
 | [`pnpm-node-express-api`](./pnpm-node-express-api/) | Node.js + Express + Sequelize (MySQL) · ESM · pnpm | REST API with layered architecture (`routes → controllers → services → repositories → models`), JWT cookie auth, Joi validation, Swagger, Docker |
 | [`pnpm-vite-react-tailwind`](./pnpm-vite-react-tailwind/) | Vite 6 + React + Tailwind CSS · ESM · pnpm | SPA with feature-based structure, token-driven styling, `cn()` utilities, and composable hooks |
+| [`latex-multi-doc`](./latex-multi-doc/) | LaTeX · latexmk · TeX Live/Tectonic | Guided scaffold for article, report, book, thesis, Beamer, letter, CV, or poster documents |
 
-Both templates share the same principles:
+The Node and React templates share these JavaScript project principles:
 
 - **ESM-only** (`"type": "module"`), `pnpm@10` via `corepack`, Node 22 LTS
 - **English** code / logs / comments, strict naming conventions
@@ -69,6 +70,8 @@ cd ~/my-new-api
 cp -r pnpm-vite-react-tailwind/ ~/my-new-app
 cd ~/my-new-app
 ```
+
+For a LaTeX document, copy [`latex-multi-doc`](./latex-multi-doc/) and follow [`docs/agent/setup.md`](./latex-multi-doc/docs/agent/setup.md). Choose the document type, bibliography, build tool, engine, language, and CI profile before creating the document files.
 
 ### 2. Fill in Project Context
 
@@ -136,6 +139,13 @@ agents-templates/
         ├── routing.md                # guards, lazy, code-splitting
         ├── security.md               # XSS/CSRF/CORS/CSP
         ├── performance-a11y.md       # bundle, axe, reduced-motion
+        └── ...
+└── latex-multi-doc/
+    ├── AGENTS.md                     # Layer 1 — guided LaTeX project context
+    └── docs/agent/                   # Layer 2 — document, build, and editor guidance
+        ├── setup.md                  # questions and doctype-specific scaffold matrix
+        ├── document-types.md        # article through poster skeletons
+        ├── build.md                 # latexmk, Tectonic, and manual profiles
         └── ...
 ```
 
